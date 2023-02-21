@@ -1,0 +1,15 @@
+<div class="container">
+
+<div>
+  <h1><%= @article.title %></h1>
+  <%=link_to edit_article_path do %>
+    <i class="fa-sharp fa-solid fa-pencil"></i>
+    <% end %>
+  <%= link_to article_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+    <i class="fa-solid fa-trash-can"></i>
+    <% end %>
+</div>
+  <div class="py-2"><%= @article.content %></div>
+  <%=link_to "Back to articles", articles_path%>
+
+</div>

@@ -1,0 +1,12 @@
+<div class="container">
+<h1></h1><h1 class="py-3">Wikinimous articles</h1>
+<%=link_to "+New article", new_article_path%>
+  <ul>
+    <% @articles.each do |article| %>
+      <li>
+            <%=link_to "#{article.title}", article_path(article.id)%>
+      </li>
+      <%= article.content.first(250)  %>
+    <% end %>
+  </ul>
+</div>
